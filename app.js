@@ -1,5 +1,6 @@
 const links = document.querySelectorAll(".links-cont .drop-down")
 const dropArrow = document.querySelectorAll(".drop-down .caret")
+const hamburger = document.querySelector(".hamburger")
 
 links.forEach(link => {
     link.addEventListener("click",()=>{
@@ -11,3 +12,7 @@ links.forEach(link => {
         }
     })
 });
+
+hamburger.addEventListener("click", ()=>{
+
+})
