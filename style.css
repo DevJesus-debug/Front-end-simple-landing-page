@@ -7,6 +7,10 @@
     box-sizing: border-box;
 }
 
+:root{
+    --links-color: hsla(0, 0%, 0%, 0.435);
+}
+
 body{
     font-family: 'Epilogue', sans-serif;;
 }
@@ -21,33 +25,45 @@ body{
 
 header{
     width: 100%;
-    max-width: 1440px;
-    height: 108px;
+    height: 10vh;
+    min-height: 90px;
     display: flex;
 }
 
 nav{
     width: 95%;
-    margin:0 auto;
+    max-width: 1440px;
+    margin: 0 auto;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     height: 100%;
 }
 
 .logo{
-    flex: .4;
+    margin-right: 50px;
+}
+
+.mobile-menu{
+    display: flex;
+    width: 100%;
 }
 
 .links-cont{
     display: flex;
-    flex: .5;
+    padding: 20px 0;
 }
 
+
+
 .links-cont a{
-    color: hsl(0, 0%, 8%);
     font-size: 17px;
+    color: var(--links-color);
     text-decoration: none;
+    color: var(--links-color)
+}
+
+.links-cont a:hover{
+   color: black;
 }
 
 .links-cont .link{
@@ -56,14 +72,53 @@ nav{
 
 .links-cont .drop-down{
     margin-right: 30px;
+    position: relative;
 }
 
 .drop-down .drop-header{
     display: flex;
+    
 }
 
+.drop-down .caret{
+    margin-left: 10px;
+}
+
+.drop-down.active-drop .caret{
+    transform: rotate(-180deg);
+}
+
+
 .drop-down ul {
-    display: none;
+    display: none;    
+}
+
+.drop-down.active-drop ul {
+    display: block;
+    position: absolute;
+    -webkit-box-shadow: 0px 0px 15px 4px #00000024; 
+    box-shadow: 0px 0px 15px 4px #00000024;
+    background-color: white;
+    white-space: nowrap;
+    margin-top: 15px;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+
+.drop-down .first-drop {
+    right: 0;
+}
+
+
+.drop-down ul li{
+  list-style: none;
+  margin: 15px 10px;
+  display: flex;
+}
+
+.drop-down ul li .icon{
+    margin-right: 15px;
 }
 
 
@@ -75,9 +130,18 @@ nav{
 }
 
 .btn-cont button{
-    padding: 10px 30px;
+    padding: 10px 23px;
     background-color: transparent;
+    cursor: pointer;
+    color: var(--links-color);
+    font-size: 16px;
+
 }
+
+.btn-cont button:hover{
+    color: rgb(0, 0, 0);
+}
+
 .btn-cont button:first-child{
     border: none;
     font-size: 17px;
@@ -85,21 +149,27 @@ nav{
 }
 
 .btn-cont button:last-child{
-    border: solid 2px black;
+    border: solid 2px var(--links-color);
     border-radius: 10px;
+}
+
+.btn-cont button:last-child:hover{
+    border: solid 2px black;
 }
 
 main{
     display: flex;
-    height: 797px;
-    max-width: 1190px;
+    padding-top: 50px;
+    height: 810px;
+    max-width: 1200px;
     margin:0 auto;
-    padding:80px 0;
+    height: 90vh;
 }
 
 main .cont-1{
     width: 50%;
-    padding-left: 60px;
+    padding-left: 45px;
+    padding-right: 20px;
 }
 
 main .cont-1 h1{
@@ -109,7 +179,7 @@ main .cont-1 h1{
 
 main .cont-1 p{
     font-size: 18px;
-    margin-top: 55px;
+    margin-top: 50px;
     padding-right: 70px;
     line-height: 30px;
 }
@@ -117,21 +187,99 @@ main .cont-1 p{
 main .cont-1 button{
     background-color: black;
     color: white;
-    border: none;
     border-radius: 10px;
     padding: 15px 30px;
     font-weight: 700;
-    margin-top: 60px;
+    font-size: 18px;
+    margin-top: 45px;
+    border: solid 2px black;
+}
+
+main .cont-1 button:hover{
+   background-color: white;
+   color: black;
+}
+
+main .sponsors{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 120px;
 }
 
 main .cont-2{
     width: 50%;
     display: flex;
     justify-content: flex-end;
-    height: 632px;
+    height: 650px;
 }
 
-main .cont-2 img{
-    width: 500px;
+main .cont-2 .mobile-img{
+    display: none;
+}
+
+@media screen and (max-width:1000px){
     
+    main{
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+        padding-top: 0;
+        height:auto;
+    }
+
+    .mobile-menu{
+        display: none;
+    }
+
+    main .cont-1{
+        width: 100%;
+        text-align: center;
+        padding-left: 0;
+        padding-right: 0;
+        padding: 0px 10px;
+        height: 50%;
+    }
+
+    main .cont-1 h1{
+        font-size: 2.2rem;
+        margin-top: 0px;
+    }
+
+    main .cont-1 p{
+        font-size: 16px;
+        margin-top: 20px;
+        padding-right: 0px;
+        line-height: 30px;
+    }
+
+    main .cont-1 button{
+        background-color: black;
+        color: white;
+        border-radius: 20px;
+        font-weight: 700;
+        font-size: 18px;
+        margin-top: 15px;
+        border: solid 2px black;
+    }
+
+    main .cont-2{
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        height: 300px;
+        margin-bottom:40px;
+    }
+
+    main .cont-2 .mobile-img{
+       display: block;
+       height: 100%;
+       width: 100%;
+    }
+    
+    main .cont-2 .desktop-img{
+        display: none;
+     }
+
 }
