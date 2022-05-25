@@ -18,8 +18,7 @@ body{
 .wrap{
     background-color: hsl(0, 0%, 98%);
     height: 100vh;
-    max-height: auto;
-    min-height: 900px;
+    min-height: 880px;
 }
 
 
@@ -89,6 +88,7 @@ nav{
 
 .drop-down .caret{
     margin-left: 10px;
+    cursor: pointer;
 }
 
 .drop-down.active-drop .caret{
@@ -170,18 +170,22 @@ main{
     height: 810px;
     max-width: 1200px;
     margin:0 auto;
-    height: 90vh;
+    height: 80vh;
+    min-height: 700px;
 }
 
 main .cont-1{
     width: 50%;
-    padding-left: 45px;
-    padding-right: 20px;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-right: 40px;
 }
 
 main .cont-1 h1{
     font-size: 5rem;
-    margin-top: 110px;
 }
 
 main .cont-1 p{
@@ -210,9 +214,9 @@ main .cont-1 button:hover{
 main .sponsors{
     width: 90%;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
-    margin-top: 120px;
+    height: 18%;
 }
 
 main .cont-2{
@@ -226,15 +230,18 @@ main .cont-2 .mobile-img{
     display: none;
 }
 
+footer{
+    width: 100%;
+    text-align: center;
+    padding:20px 10px ;
+}
+
+
 
 @media screen and (max-width:1000px){
     .wrap{
         height: 100vh;
         min-height: 1000px;
-    }
-
-    header{
-        height: 10vh;
     }
 
     .logo img{
@@ -262,7 +269,8 @@ main .cont-2 .mobile-img{
         flex-direction: column-reverse;
         width: 100%;
         padding-top: 0;
-        height:90vh;
+        height:80vh;
+        min-height: 880px;
     }
 
     .mobile-menu-wrap{
@@ -366,6 +374,7 @@ main .cont-2 .mobile-img{
     main .cont-1{
         width: 100%;
         text-align: center;
+        align-items: center;
         padding-left: 0;
         padding-right: 0;
         padding: 0px 10px;
@@ -418,7 +427,6 @@ main .cont-2 .mobile-img{
        align-items: center;
        justify-content: space-between;
        margin-top: 40px;
-       margin-bottom: 100px;
     }
 
     main .sponsors .sponsor{
@@ -435,18 +443,16 @@ main .cont-2 .mobile-img{
 
 }
 
-
 @media screen and (max-width:500px){
     
     .wrap{
         height: 100vh;
-        min-height: 830px;
+        min-height: 880px;
     }
 
     main{
-        height:auto;
+        min-height: 700px;
     }
-
 
     main .cont-1{
         width: 100%;
@@ -458,4 +464,7 @@ main .cont-2 .mobile-img{
         margin-bottom:50px;
     }
 
+    main .sponsors{
+        margin-bottom: 80px;
+     }
 }
