@@ -275,7 +275,7 @@ footer{
 
     .mobile-menu-wrap{
         transform: translateX(100%);
-        transition: all ease-in-out 1s;
+        transition: all .7s ease-in-out;
         display: flex;
         position: fixed;
         top: 0;
@@ -287,8 +287,8 @@ footer{
     
     .mobile-menu-wrap.active-nav{
         transform: translateX(0);
-        transition: all ease-in-out 1s;
-        animation: color-change  ease-in 3s forwards;
+        transition: all .7s ease-in-out;
+        animation: color-change  ease-in 2s forwards;
     }
 
     .close-icon{
